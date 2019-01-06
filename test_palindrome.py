@@ -3,9 +3,10 @@ import is_palindrome
 import time
 
 SLOW_TEST_THRESHOLD = 0.000001
+# https://hackernoon.com/timing-tests-in-python-for-fun-and-profit-1663144571
 
 
-class TestPalindrome(unittest.TestCase):
+class TestIsPalindrome(unittest.TestCase):
 
     def setUp(self):
         self._started_at = time.time()
@@ -13,9 +14,9 @@ class TestPalindrome(unittest.TestCase):
     def tearDown(self):
         elapsed = time.time() - self._started_at
         if elapsed > SLOW_TEST_THRESHOLD:
-            print('{} ({}s)'.format(self.id(), round(elapsed, 5)))
+            print('MAX TIME TAKEN BY {} ({}s)'.format(self.id(), round(elapsed,
+                                                                    5)))
         print('{} ({}s)'.format(self.id(), round(elapsed, 5)))
-# https://hackernoon.com/timing-tests-in-python-for-fun-and-profit-1663144571
 
     def test_reverse(self):
         self.assertEqual(is_palindrome.reverse('kayak'), True)
@@ -27,6 +28,7 @@ class TestPalindrome(unittest.TestCase):
         self.assertEqual(is_palindrome.reverse('racecar '), True)
         self.assertEqual(is_palindrome.reverse('a'), True)
         self.assertEqual(is_palindrome.reverse(''), True)
+
         with self.assertRaises(TypeError):
             is_palindrome.reverse()
         with self.assertRaises(AttributeError):
@@ -42,6 +44,7 @@ class TestPalindrome(unittest.TestCase):
         self.assertEqual(is_palindrome.front_back('racecar'), True)
         self.assertEqual(is_palindrome.front_back('a'), True)
         self.assertEqual(is_palindrome.front_back(''), True)
+
         with self.assertRaises(TypeError):
             is_palindrome.front_back()
         with self.assertRaises(AttributeError):
@@ -57,6 +60,7 @@ class TestPalindrome(unittest.TestCase):
         self.assertEqual(is_palindrome.compare_loop('racecar'), True)
         self.assertEqual(is_palindrome.compare_loop('a'), True)
         self.assertEqual(is_palindrome.compare_loop(''), True)
+
         with self.assertRaises(TypeError):
             is_palindrome.compare_loop()
         with self.assertRaises(AttributeError):

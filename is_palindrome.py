@@ -4,8 +4,38 @@ def reverse(word):
     >>> is_palindrome.reverse('kayak')
     True
     """
-    word = word.strip()
+    s = word
+    word = s.strip()
     return word == word[::-1]
+
+    # Option 1
+    # for i in range(len(s) // 2 + 1):
+    #   if s[i] != s[len(s) - i - 1]:
+    #     return False
+    #
+    # return True
+
+    # Option 2
+    # for i in range(len(s) // 2):
+    #     if s[i] != s[len(s) - i - 1]:
+    #         return False
+    #
+    # return True
+
+    # Option 3
+    j = len(s) - 1
+    # for i in range(len(s) // 2):
+    #   if s[i] != s[j - i]:
+    #     return False
+    #
+    # return True
+
+    # Option 4 - This does not work
+    # for i in range(len(s) // 2):
+    #   if s[i] != s[len(s) - i]:
+    #     return False
+    #
+    # return True
 
 
 def front_back(word):
