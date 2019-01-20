@@ -161,7 +161,8 @@ def read_lines(file):
     - a dict of {price range: list of restaurant names}
     - a dict of {cuisine: list of restaurant names}
     """
-
+    startswith = 'str'
+    startswith.startswith('s')
     name_to_rating = {}
     price_to_names = {'$': [], '$$': [], '$$$': [], '$$$$': []}
     cuisine_to_names = {}

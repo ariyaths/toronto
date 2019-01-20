@@ -25,6 +25,7 @@ class TestIsPalindrome(unittest.TestCase):
         self.assertEqual(is_palindrome.reverse('renter'), False)
         self.assertEqual(is_palindrome.reverse('redder'), True)
         self.assertEqual(is_palindrome.reverse('xerox'), False)
+        self.assertEqual(is_palindrome.reverse('qwertytrewq'), True)
         self.assertEqual(is_palindrome.reverse('racecar '), True)
         self.assertEqual(is_palindrome.reverse('a'), True)
         self.assertEqual(is_palindrome.reverse(''), True)
